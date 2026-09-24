@@ -1,0 +1,26 @@
+class Solution {
+    public int mySqrt(int x) {
+        int l=1, r=x;
+        int res=1;
+        if(x==0){
+            return 0;
+        }
+        while(l<=r){
+            int m = l+(r-l)/2;
+            if((long)m*m > x){
+                r=m-1;
+            }
+            else if((long)m*m < x){
+                res = m;
+                l=m+1;
+            }
+            else{
+                return m;
+            }
+        }
+        return res;
+    }
+}
+
+//logn
+//1
